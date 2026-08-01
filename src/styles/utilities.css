@@ -1,0 +1,44 @@
+.glass-card {
+  @apply bg-white/80 backdrop-blur-xl border border-sky-100/80 shadow-sm;
+}
+
+.dark .glass-card {
+  @apply bg-blue-950/30 backdrop-blur-xl border border-blue-500/20 shadow-md;
+}
+
+.feature-icon {
+  @apply flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 text-blue-600;
+}
+
+.dark .feature-icon {
+  @apply bg-blue-500/20 text-blue-300;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-500 bg-clip-text text-transparent;
+}
+
+.pricing-card-hover-effect {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.pricing-card-hover-effect:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.nav-link {
+  @apply text-sm font-medium text-foreground/70 hover:text-foreground transition-colors flex items-center gap-1;
+}
+
+.nav-link-active {
+  @apply text-sm font-medium text-blue-600 dark:text-blue-400 font-semibold;
+}

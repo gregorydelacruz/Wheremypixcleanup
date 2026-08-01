@@ -1,0 +1,38 @@
+/* Styling for the form */
+#mc-embedded-subscribe-form {
+    /* Add any specific styles for the form */
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f3f4f6; /* light grey background */
+}
+
+/* Styling for inputs within the form */
+#mc-embedded-subscribe-form input[type="email"], 
+#mc-embedded-subscribe-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc; /* light gray border */
+    border-radius: 4px;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* To include padding in width */
+}
+
+/* Hidden input styles (if needed to be specifically styled, usually hidden though) */
+#mc-embedded-subscribe-form input[type="text"] {
+    position: absolute;
+    left: -5000px; /* Keep it hidden */
+}
+
+/* Styling for the submit button */
+#mc-embedded-subscribe-form input[type="submit"] {
+    background-color: #007BFF; /* Blue background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#mc-embedded-subscribe-form input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

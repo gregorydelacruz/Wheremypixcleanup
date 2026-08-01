@@ -1,0 +1,1 @@
+UPDATE public.user_subscriptions SET usage_count = 0, updated_at = now() WHERE usage_count >= monthly_limit;

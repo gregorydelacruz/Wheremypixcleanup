@@ -1,0 +1,13 @@
+project_id = "jhejjpqngvlttrdpgofr"
+
+[functions.analyze-image]
+verify_jwt = false
+
+[functions.send-email]
+verify_jwt = false
+
+[functions.upsert-profile]
+verify_jwt = false
+
+[functions.keep-alive]
+verify_jwt = false

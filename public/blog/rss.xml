@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Where my pix Blog</title>
+    <link>https://wheremypix.com/blog/</link>
+    <description>Latest articles from Where my pix</description>
+    <language>en</language>
+    <atom:link href="https://wheremypix.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>How to Find Your Memories Instantly: Best AI Photo Organizer Software of 2026</title>
+      <link>https://wheremypix.com/blog/how-to-find-your-memories-instantly-best-ai-photo-organizer-software-of-2026.html</link>
+      <description>How to Find Your Memories Instantly: Best AI Photo Organizer Software of 2026 We understand that digital clutter can feel like a heavy weight on your shoulde...</description>
+      <pubDate>Fri, 27 Feb 2026 13:23:53 GMT</pubDate>
+      <guid isPermaLink="true">https://wheremypix.com/blog/how-to-find-your-memories-instantly-best-ai-photo-organizer-software-of-2026.html</guid>
+    </item>
+
+    <item>
+      <title>How to Organize 10,000 Photos in Minutes: Best AI Photo Organizer 2026</title>
+      <link>https://wheremypix.com/blog/how-to-organize-10000-photos-in-minutes-best-ai-photo-organizer-2026.html</link>
+      <description>How to Organize 10,000 Photos in Minutes: Best AI Photo Organizer 2026 Research indicates that AI-driven tagging and metadata generation reduces archiving ti...</description>
+      <pubDate>Fri, 27 Feb 2026 13:04:43 GMT</pubDate>
+      <guid isPermaLink="true">https://wheremypix.com/blog/how-to-organize-10000-photos-in-minutes-best-ai-photo-organizer-2026.html</guid>
+    </item>
+  </channel>
+</rss>

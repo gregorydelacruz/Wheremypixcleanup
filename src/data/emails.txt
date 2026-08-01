@@ -1,0 +1,7 @@
+
+# Captured Emails
+# Last updated: 2024-05-29T00:00:00.000Z
+#
+# Format: email,timestamp,listId
+# Do not modify this file manually
+
