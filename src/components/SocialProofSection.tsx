@@ -26,39 +26,50 @@ export default function SocialProofSection() {
     };
   }, []);
 
-  const formattedImages = imagesProcessed.toLocaleString();
+  // Compact form on narrow screens so the long count doesn't collide with stars
+  const formattedImages =
+    imagesProcessed >= 1_000_000
+      ? `${(imagesProcessed / 1_000_000).toFixed(1).replace(/\.0$/, "")}M`
+      : imagesProcessed.toLocaleString();
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-2xl rounded-2xl bg-[#0b1220] border border-white/10 px-4 py-5 md:px-8 md:py-7 text-center shadow-xl">
+      <div className="w-full max-w-2xl rounded-2xl bg-[#0b1220] border border-white/10 px-3 py-5 md:px-8 md:py-7 text-center shadow-xl">
         <h3 className="text-lg md:text-2xl font-bold text-white">
           Trusted by Users Worldwide
         </h3>
 
-        <div className="mt-4 md:mt-6 grid grid-cols-3 gap-2 md:gap-6">
-          <div>
-            <div className="text-xl md:text-3xl font-extrabold text-white">
+        <div className="mt-4 md:mt-6 flex items-start justify-between gap-1 md:gap-6">
+          {/* Users — left */}
+          <div className="flex-shrink-0 w-[22%] md:w-auto md:flex-1 text-left md:text-center pl-1 md:pl-0">
+            <div className="text-xl md:text-3xl font-extrabold text-white tabular-nums">
               {activeUsers.toLocaleString()}+
             </div>
-            <div className="mt-1 text-white/50 text-[10px] md:text-sm">Active Users</div>
+            <div className="mt-1 text-white/50 text-[10px] md:text-sm leading-tight">
+              Active Users
+            </div>
           </div>
 
-          <div>
-            <div className="text-xl md:text-3xl font-extrabold text-white">
+          {/* Images — center, closer to users */}
+          <div className="flex-1 text-center px-1">
+            <div className="text-xl md:text-3xl font-extrabold text-white tabular-nums">
               {formattedImages}+
             </div>
-            <div className="mt-1 text-white/50 text-[10px] md:text-sm">Images Processed</div>
+            <div className="mt-1 text-white/50 text-[10px] md:text-sm leading-tight">
+              Images Processed
+            </div>
           </div>
 
-          <div>
-            <div className="text-base md:text-2xl font-extrabold flex items-center justify-center gap-0.5 md:gap-1">
+          {/* Rating — right, enough room for stars */}
+          <div className="flex-shrink-0 w-[34%] md:w-auto md:flex-1 text-right md:text-center pr-1 md:pr-0">
+            <div className="text-sm md:text-2xl font-extrabold flex items-center justify-end md:justify-center gap-0.5">
               <span>⭐️</span>
               <span>⭐️</span>
               <span>⭐️</span>
               <span>⭐️</span>
               <span>✨</span>
             </div>
-            <div className="mt-1 text-white/50 text-[10px] md:text-sm">
+            <div className="mt-1 text-white/50 text-[10px] md:text-sm leading-tight">
               {averageRating}/5 Average Rating
             </div>
           </div>
