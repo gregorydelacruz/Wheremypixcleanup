@@ -1,4 +1,3 @@
-// src/components/SocialProofSection.tsx
 import { useEffect, useState } from "react";
 
 function getRandomIncrement() {
@@ -6,8 +5,8 @@ function getRandomIncrement() {
 }
 
 export default function SocialProofSection() {
-  const [activeUsers, setActiveUsers] = useState(15);
-  const [imagesProcessed, setImagesProcessed] = useState(1_000_000);
+  const [activeUsers, setActiveUsers] = useState(41);
+  const [imagesProcessed, setImagesProcessed] = useState(1_000_122);
   const averageRating = 4.9;
 
   useEffect(() => {
@@ -30,30 +29,36 @@ export default function SocialProofSection() {
   const formattedImages = imagesProcessed.toLocaleString();
 
   return (
-    <div className="flex justify-center py-10">
-      <div className="w-full max-w-2xl rounded-2xl border border-border bg-card backdrop-blur-md p-8 text-center shadow-lg">
-        <h3 className="text-2xl md:text-3xl font-bold text-card-foreground">
+    <div className="flex justify-center">
+      <div className="w-full max-w-2xl rounded-2xl bg-[#0b1220] border border-white/10 px-4 py-5 md:px-8 md:py-7 text-center shadow-xl">
+        <h3 className="text-lg md:text-2xl font-bold text-white">
           Trusted by Users Worldwide
         </h3>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-4 md:mt-6 grid grid-cols-3 gap-2 md:gap-6">
           <div>
-            <div className="text-3xl font-extrabold text-card-foreground">
+            <div className="text-xl md:text-3xl font-extrabold text-white">
               {activeUsers.toLocaleString()}+
             </div>
-            <div className="mt-1 text-muted-foreground text-sm">Active Users</div>
+            <div className="mt-1 text-white/50 text-[10px] md:text-sm">Active Users</div>
           </div>
 
           <div>
-            <div className="text-3xl font-extrabold text-card-foreground">{formattedImages}+</div>
-            <div className="mt-1 text-muted-foreground text-sm">Images Processed</div>
-          </div>
-
-          <div>
-            <div className="text-3xl font-extrabold flex items-center justify-center gap-2">
-              ⭐️⭐️⭐️⭐️✨
+            <div className="text-xl md:text-3xl font-extrabold text-white">
+              {formattedImages}+
             </div>
-            <div className="mt-1 text-muted-foreground text-sm">
+            <div className="mt-1 text-white/50 text-[10px] md:text-sm">Images Processed</div>
+          </div>
+
+          <div>
+            <div className="text-base md:text-2xl font-extrabold flex items-center justify-center gap-0.5 md:gap-1">
+              <span>⭐️</span>
+              <span>⭐️</span>
+              <span>⭐️</span>
+              <span>⭐️</span>
+              <span>✨</span>
+            </div>
+            <div className="mt-1 text-white/50 text-[10px] md:text-sm">
               {averageRating}/5 Average Rating
             </div>
           </div>

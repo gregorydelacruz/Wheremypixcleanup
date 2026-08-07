@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "@/auth/useAuth";
+import SocialProofSection from "@/components/SocialProofSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -86,24 +87,9 @@ const Index = () => {
           </div>
         </section>
 
-        {/* SOCIAL PROOF — below steps */}
+        {/* SOCIAL PROOF — production-style fake counters */}
         <section className="mt-4 md:mt-8 px-4">
-          <div className="mx-auto max-w-lg flex items-center justify-between gap-2 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-3 py-2.5 md:px-6 md:py-4 text-center">
-            <div className="flex-1">
-              <div className="text-base md:text-2xl font-extrabold text-white">2,000+</div>
-              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Users</div>
-            </div>
-            <div className="w-px h-8 bg-white/20" />
-            <div className="flex-1">
-              <div className="text-base md:text-2xl font-extrabold text-white">1M+</div>
-              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Images</div>
-            </div>
-            <div className="w-px h-8 bg-white/20" />
-            <div className="flex-1">
-              <div className="text-base md:text-2xl font-extrabold text-white">4.9★</div>
-              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Rating</div>
-            </div>
-          </div>
+          <SocialProofSection />
         </section>
       </main>
 
