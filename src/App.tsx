@@ -10,7 +10,7 @@ import AuthProvider from "./auth/AuthProvider";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import ProtectedAdminRoute from "@/auth/ProtectedAdminRoute";
 import Navbar from "@/components/Navbar";
-import ScrollOnUserScrollDown from "@/components/ScrollOnUserScrollDown";
+import ScrollToTop from "@/components/ScrollToTop";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import AfterLoginSync from "@/components/auth/AfterLoginSync";
 
@@ -58,7 +58,7 @@ function App() {
               <BrowserRouter>
                 <AuthProvider>
                   <AfterLoginSync />
-                  <ScrollOnUserScrollDown />
+                  <ScrollToTop />
                   <div className="flex flex-col min-h-screen overflow-x-hidden">
                     <Navbar />
 
