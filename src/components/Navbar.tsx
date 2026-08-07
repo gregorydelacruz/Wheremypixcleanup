@@ -4,7 +4,6 @@ import { useAuth } from "@/auth/useAuth";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { MainNavigation } from "@/components/navigation/MainNavigation";
 import MobileMenu from "@/components/MobileMenu";
-import { useState } from "react";
 
 const NavButton: React.FC<
   React.PropsWithChildren<{ to?: string; onClick?: () => void }>
@@ -26,21 +25,23 @@ const NavButton: React.FC<
 
 const Navbar = () => {
   const { isAuthenticated, login, logout } = useAuth();
-  const [open, setOpen] = useState(false); // reserved if you later add a mobile menu
 
   return (
     <header className="sticky top-4 z-50">
       <div className="mx-auto max-w-7xl px-4">
         <div
           className="
-            flex items-center gap-4
+            flex items-center gap-2 md:gap-4
             rounded-3xl border border-white/20
             bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 backdrop-blur-md shadow-2xl
-            px-5 py-3
+            px-4 py-3 md:px-5
           "
         >
           {/* Brand */}
-          <Link to="/" className="shrink-0 select-none text-xl font-bold md:flex-none flex-1 text-center md:text-left">
+          <Link
+            to="/"
+            className="shrink-0 select-none text-lg md:text-xl font-bold md:flex-none flex-1 md:flex-initial text-left"
+          >
             <span className="bg-gradient-to-r from-indigo-300 via-sky-300 to-cyan-300 bg-clip-text text-transparent">
               Where My Pix
             </span>
@@ -61,8 +62,9 @@ const Navbar = () => {
             <ThemeToggle />
           </div>
 
-          {/* Mobile hamburger menu - shown only on mobile */}
-          <div className="md:hidden ml-auto flex items-center gap-2">
+          {/* Mobile: theme toggle between title and hamburger */}
+          <div className="md:hidden flex items-center gap-1">
+            <ThemeToggle />
             <MobileMenu />
           </div>
         </div>

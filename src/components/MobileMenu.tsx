@@ -3,7 +3,6 @@ import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "@/auth/useAuth";
-import { ThemeToggle } from "./ThemeToggle";
 import { useState, useEffect } from "react";
 import { MobileMainLinks } from "./mobile/MobileMainLinks";
 import { MobileResourcesLinks } from "./mobile/MobileResourcesLinks";
@@ -17,7 +16,6 @@ const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  // Close drawer when navigation happens
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
@@ -37,7 +35,6 @@ const MobileMenu = () => {
       <DrawerContent>
         <ScrollArea className="h-[80vh] overflow-y-auto">
           <div className="px-4 py-6 space-y-6">
-            {/* Auth first — above Home */}
             <MobileAuthButtons
               isAuthenticated={isAuthenticated}
               login={login}
@@ -53,10 +50,6 @@ const MobileMenu = () => {
                 isAuthenticated={isAuthenticated}
               />
             </nav>
-
-            <div className="flex justify-center pt-2">
-              <ThemeToggle />
-            </div>
           </div>
         </ScrollArea>
       </DrawerContent>
