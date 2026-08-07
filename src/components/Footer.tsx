@@ -3,11 +3,11 @@ import { SocialShareWrapper } from "./social/SocialShareWrapper";
 
 const Footer = () => {
   return (
-    <footer className="py-4 md:py-8 border-t">
+    <footer className="py-2 md:py-8 border-t">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center gap-4 md:gap-6">
+        <div className="flex flex-col items-center gap-2 md:gap-6">
           <SocialShareWrapper />
-          <div className="flex flex-wrap items-center justify-center gap-4 text-center text-sm text-white">
+          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-center text-sm text-white">
             <span>© 2025 Where My Pix. All rights reserved.</span>
             <span className="hidden md:inline">•</span>
             <div className="flex items-center gap-1">
