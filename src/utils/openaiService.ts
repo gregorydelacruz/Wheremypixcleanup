@@ -1,7 +1,4 @@
-
 import { supabase } from '@/integrations/supabase/client';
-import { reportDiagnostic, reportEdgeFunctionError } from '@/lib/diagnostics';
-
 
 // Retrieves the Auth0 id token from the singleton stored by AuthProvider,
 // so the edge function can verify the caller and enforce plan/usage limits.
@@ -34,12 +31,7 @@ export async function getImageDescription(base64Image: string): Promise<string |
   try {
     const token = await getAuthToken();
     if (!token) {
-      reportDiagnostic({
-        kind: 'auth0_token',
-        title: 'No Auth0 ID token available',
-        message: 'The Auth0 client could not produce an ID token for this session.',
-        hint: 'Sign in again. If this repeats on one domain only, that origin is likely missing from Auth0 → Allowed Web Origins.',
-      });
+      console.error('No Auth0 ID token available. Sign in again.');
       throw new Error('You must be signed in to analyze images.');
     }
 
@@ -50,7 +42,6 @@ export async function getImageDescription(base64Image: string): Promise<string |
 
     if (error) {
       console.error('Image analysis error:', error.message);
-      await reportEdgeFunctionError(error);
       throw new Error(error.message || 'Analysis failed');
     }
 
@@ -64,28 +55,26 @@ export async function getImageDescription(base64Image: string): Promise<string |
 
     return data.description;
   } catch (error) {
-    console.error("Error calling image analysis service:", error);
+    console.error('Error calling image analysis service:', error);
     throw error;
   }
 }
 
-
-
 // Sanitize the description text to make it suitable for filenames and categories
 export function sanitizeDescription(description: string): string {
   // Check for AI refusal messages
-  if (description.toLowerCase().includes("sorry") && description.toLowerCase().includes("can't help")) {
-    return "Cheeky";
+  if (description.toLowerCase().includes('sorry') && description.toLowerCase().includes("can't help")) {
+    return 'Cheeky';
   }
-  
+
   // Remove unwanted starting words
-  let sanitized = description.replace(/^The image shows a\s*/i, "");
-  sanitized = sanitized.replace(/^A\s+/i, "");
-  sanitized = sanitized.replace(/^An\s+/i, "");
-  sanitized = sanitized.replace(/^The\s+/i, "");
-  sanitized = sanitized.replace(/^This is a\s+/i, "");
-  sanitized = sanitized.replace(/^This is an\s+/i, "");
+  let sanitized = description.replace(/^The image shows a\s*/i, '');
+  sanitized = sanitized.replace(/^A\s+/i, '');
+  sanitized = sanitized.replace(/^An\s+/i, '');
+  sanitized = sanitized.replace(/^The\s+/i, '');
+  sanitized = sanitized.replace(/^This is a\s*/i, '');
+  sanitized = sanitized.replace(/^This is an\s*/i, '');
 
   // Extract only the first sentence and limit to 40 characters
-  return sanitized.split(". ")[0].substring(0, 40).trim();
+  return sanitized.split('. ')[0].substring(0, 40).trim();
 }
