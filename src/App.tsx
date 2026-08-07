@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { ColorThemeProvider } from "@/components/ColorThemeProvider";
 import { SocialShareProvider } from "@/contexts/SocialShareContext";
 import AuthProvider from "./auth/AuthProvider";
 import ProtectedRoute from "./auth/ProtectedRoute";
@@ -42,7 +43,6 @@ import ChromeExtension from "./pages/ChromeExtension";
 import ChromeStorePolicy from "./pages/ChromeStorePolicy";
 import VipSignup from "./pages/VipSignup";
 
-// Initialize QueryClient for React Query
 const queryClient = new QueryClient();
 
 function App() {
@@ -50,73 +50,74 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
         <ThemeProvider defaultTheme="light" storageKey="where-my-pix-theme">
-          <SocialShareProvider>
-            <TooltipProvider>
-              <Toaster />
-              <Sonner />
-              <BrowserRouter>
-                <AuthProvider>
-                  <AfterLoginSync />
-                  <ScrollToTop />
-                  <div className="flex flex-col overflow-x-hidden md:min-h-screen">
-                    <Navbar />
+          <ColorThemeProvider>
+            <SocialShareProvider>
+              <TooltipProvider>
+                <Toaster />
+                <Sonner />
+                <BrowserRouter>
+                  <AuthProvider>
+                    <AfterLoginSync />
+                    <ScrollToTop />
+                    <div className="flex flex-col overflow-x-hidden md:min-h-screen">
+                      <Navbar />
 
-                    <main className="overflow-auto md:flex-grow">
-                      <Routes>
-                        <Route path="/" element={<Index />} />
-                        <Route path="/pricing" element={<Pricing />} />
+                      <main className="overflow-auto md:flex-grow">
+                        <Routes>
+                          <Route path="/" element={<Index />} />
+                          <Route path="/pricing" element={<Pricing />} />
 
-                        <Route
-                          path="/upload"
-                          element={
-                            <ProtectedRoute>
-                              <Upload />
-                            </ProtectedRoute>
-                          }
-                        />
-                        <Route
-                          path="/usage"
-                          element={
-                            <ProtectedRoute>
-                              <Usage />
-                            </ProtectedRoute>
-                          }
-                        />
+                          <Route
+                            path="/upload"
+                            element={
+                              <ProtectedRoute>
+                                <Upload />
+                              </ProtectedRoute>
+                            }
+                          />
+                          <Route
+                            path="/usage"
+                            element={
+                              <ProtectedRoute>
+                                <Usage />
+                              </ProtectedRoute>
+                            }
+                          />
 
-                        {/* Admin (guarded by email allow-list in ProtectedAdminRoute) */}
-                        <Route element={<ProtectedAdminRoute />}>
-                          <Route path="/admin" element={<Admin />} />
-                        </Route>
+                          <Route element={<ProtectedAdminRoute />}>
+                            <Route path="/admin" element={<Admin />} />
+                          </Route>
 
-                        <Route path="/terms" element={<Terms />} />
-                        <Route path="/privacy" element={<Privacy />} />
-                        <Route path="/disclaimer" element={<Disclaimer />} />
-                        <Route path="/demos2" element={<Demos2 />} />
-                        <Route path="/gettingstarted" element={<GettingStarted />} />
-                        <Route path="/troubleshooting" element={<Troubleshooting />} />
-                        <Route path="/uploadingphotos" element={<UploadingPhotos />} />
-                        <Route path="/contact" element={<Contact />} />
-                        <Route path="/features" element={<Features />} />
-                        <Route path="/demos" element={<Demos />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/faq" element={<FAQ />} />
-                        <Route path="/success" element={<Success />} />
-                        <Route path="/examples" element={<Examples />} />
-                        <Route path="/help" element={<Help />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/signup" element={<SignUp />} />
-                        <Route path="/vip-signup" element={<VipSignup />} />
-                        <Route path="/chrome-extension" element={<ChromeExtension />} />
-                        <Route path="/chrome-store-policy" element={<ChromeStorePolicy />} />
-                        <Route path="*" element={<NotFound />} />
-                      </Routes>
-                    </main>
-                    <ScrollToTopButton />
-                  </div>
-                </AuthProvider>
-              </BrowserRouter>
-            </TooltipProvider>
-          </SocialShareProvider>
+                          <Route path="/terms" element={<Terms />} />
+                          <Route path="/privacy" element={<Privacy />} />
+                          <Route path="/disclaimer" element={<Disclaimer />} />
+                          <Route path="/demos2" element={<Demos2 />} />
+                          <Route path="/gettingstarted" element={<GettingStarted />} />
+                          <Route path="/troubleshooting" element={<Troubleshooting />} />
+                          <Route path="/uploadingphotos" element={<UploadingPhotos />} />
+                          <Route path="/contact" element={<Contact />} />
+                          <Route path="/features" element={<Features />} />
+                          <Route path="/demos" element={<Demos />} />
+                          <Route path="/about" element={<About />} />
+                          <Route path="/faq" element={<FAQ />} />
+                          <Route path="/success" element={<Success />} />
+                          <Route path="/examples" element={<Examples />} />
+                          <Route path="/help" element={<Help />} />
+                          <Route path="/login" element={<Login />} />
+                          <Route path="/signup" element={<SignUp />} />
+                          <Route path="/vip-signup" element={<VipSignup />} />
+                          <Route path="/chrome-extension" element={<ChromeExtension />} />
+                          <Route path="/chrome-store-policy" element={<ChromeStorePolicy />} />
+                          <Route path="*" element={<NotFound />} />
+                        </Routes>
+                      </main>
+                      <ScrollToTopButton />
+                    </div>
+                  </AuthProvider>
+                </BrowserRouter>
+              </TooltipProvider>
+            </SocialShareProvider>
+          </ColorThemeProvider>
         </ThemeProvider>
       </HelmetProvider>
     </QueryClientProvider>
