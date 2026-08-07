@@ -1,5 +1,4 @@
-
-import { Info, FileText } from "lucide-react";
+import { Info, FileText, MessageSquare, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface MobileCompanyLinksProps {
@@ -23,21 +22,23 @@ export const MobileCompanyLinks = ({ handleLinkClick }: MobileCompanyLinksProps)
         className="text-base font-medium text-foreground hover:text-foreground/80 flex items-center gap-1 pl-2"
         onClick={handleLinkClick}
       >
-        <FileText className="h-4 w-4 mr-1" />
+        <MessageSquare className="h-4 w-4 mr-1" />
         Contact
       </Link>
       <Link
         to="/terms"
-        className="text-base font-medium text-foreground hover:text-foreground/80 pl-2"
+        className="text-base font-medium text-foreground hover:text-foreground/80 flex items-center gap-1 pl-2"
         onClick={handleLinkClick}
       >
+        <FileText className="h-4 w-4 mr-1" />
         Terms
       </Link>
       <Link
         to="/privacy"
-        className="text-base font-medium text-foreground hover:text-foreground/80 pl-2"
+        className="text-base font-medium text-foreground hover:text-foreground/80 flex items-center gap-1 pl-2"
         onClick={handleLinkClick}
       >
+        <Shield className="h-4 w-4 mr-1" />
         Privacy
       </Link>
     </>
