@@ -18,7 +18,7 @@ const Index = () => {
       </div>
 
       {/* flex-1 only on md+ so mobile doesn't stretch a huge empty gap above the footer */}
-      <main className="relative z-10 pt-6 pb-3 md:flex-1 md:pt-8 md:pb-10">
+      <main className="relative z-10 pt-6 pb-2 md:flex-1 md:pt-8 md:pb-10">
         {/* HERO */}
         <section className="px-4">
           <div className="mx-auto max-w-3xl text-center">
@@ -88,7 +88,7 @@ const Index = () => {
         </section>
 
         {/* SOCIAL PROOF — production-style fake counters */}
-        <section className="mt-4 md:mt-8 px-4">
+        <section className="mt-2 md:mt-5 px-4">
           <SocialProofSection />
         </section>
       </main>

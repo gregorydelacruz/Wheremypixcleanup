@@ -34,35 +34,39 @@ export default function SocialProofSection() {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-2xl rounded-2xl bg-[#0b1220] border border-white/10 px-3 py-5 md:px-8 md:py-7 text-center shadow-xl">
-        <h3 className="text-lg md:text-2xl font-bold text-white">
+      <div className="w-full max-w-2xl rounded-2xl bg-[#0b1220] border border-white/10 px-3 py-3 md:px-8 md:py-5 text-center shadow-xl">
+        <h3 className="text-base md:text-2xl font-bold text-white leading-tight">
           Trusted by Users Worldwide
         </h3>
 
-        <div className="mt-4 md:mt-6 flex items-start justify-between gap-1 md:gap-6">
+        <div className="mt-2.5 md:mt-4 flex items-end justify-between gap-1 md:gap-6">
           {/* Users — left */}
           <div className="flex-shrink-0 w-[22%] md:w-auto md:flex-1 text-left md:text-center pl-1 md:pl-0">
-            <div className="text-xl md:text-3xl font-extrabold text-white tabular-nums">
-              {activeUsers.toLocaleString()}+
+            <div className="h-7 md:h-9 flex items-end md:items-center md:justify-center">
+              <span className="text-xl md:text-3xl font-extrabold text-white tabular-nums leading-none">
+                {activeUsers.toLocaleString()}+
+              </span>
             </div>
             <div className="mt-1 text-white/50 text-[10px] md:text-sm leading-tight">
               Active Users
             </div>
           </div>
 
-          {/* Images — center, closer to users */}
+          {/* Images — center */}
           <div className="flex-1 text-center px-1">
-            <div className="text-xl md:text-3xl font-extrabold text-white tabular-nums">
-              {formattedImages}+
+            <div className="h-7 md:h-9 flex items-end justify-center md:items-center">
+              <span className="text-xl md:text-3xl font-extrabold text-white tabular-nums leading-none">
+                {formattedImages}+
+              </span>
             </div>
             <div className="mt-1 text-white/50 text-[10px] md:text-sm leading-tight">
               Images Processed
             </div>
           </div>
 
-          {/* Rating — right, enough room for stars */}
+          {/* Rating — same baseline as the numbers */}
           <div className="flex-shrink-0 w-[34%] md:w-auto md:flex-1 text-right md:text-center pr-1 md:pr-0">
-            <div className="text-sm md:text-2xl font-extrabold flex items-center justify-end md:justify-center gap-0.5">
+            <div className="h-7 md:h-9 flex items-end justify-end md:items-center md:justify-center gap-0.5 text-[13px] md:text-xl leading-none">
               <span>⭐️</span>
               <span>⭐️</span>
               <span>⭐️</span>
