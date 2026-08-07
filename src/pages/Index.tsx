@@ -22,7 +22,7 @@ const Index = () => {
         {/* HERO */}
         <section className="px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="whitespace-nowrap text-[clamp(1.05rem,5.1vw,3rem)] tracking-tight leading-none font-extrabold text-white">
+            <h1 className="w-full whitespace-nowrap text-[clamp(1.2rem,5.9vw,3.25rem)] tracking-tight leading-none font-extrabold text-white">
               Organize Your Photos Instantly
             </h1>
             <p className="mt-2 md:mt-4 text-sm sm:text-base md:text-xl text-white/80 max-w-xl mx-auto">
