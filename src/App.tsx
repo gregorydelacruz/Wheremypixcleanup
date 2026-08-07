@@ -1,5 +1,3 @@
-
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -18,19 +16,15 @@ import AfterLoginSync from "@/components/auth/AfterLoginSync";
 import DiagnosticsScreen from "@/components/DiagnosticsScreen";
 import { DomainFallbackBanner } from "@/components/DomainFallbackBanner";
 
-
-
 // Pages
 import Index from "./pages/Index";
 import Pricing from "./pages/Pricing";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
-import Disclaimer from "./pages/Disclaimer"; // ← add this
+import Disclaimer from "./pages/Disclaimer";
 import Demos from "./pages/Demos";
 import Demos2 from "./pages/Demos2";
 import Contact from "./pages/Contact";
-import Blog from "./pages/blog";
-import BlogPost from "./pages/blog/BlogPost";
 import GettingStarted from "./pages/GettingStarted";
 import Troubleshooting from "./pages/Troubleshooting";
 import UploadingPhotos from "./pages/UploadingPhotos";
@@ -61,78 +55,75 @@ function App() {
         <ThemeProvider defaultTheme="light" storageKey="where-my-pix-theme">
           <SocialShareProvider>
             <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter>
-              <AuthProvider>
-                <AfterLoginSync /> {/* runs once after login */}
-                <DiagnosticsScreen />
+              <Toaster />
+              <Sonner />
+              <BrowserRouter>
+                <AuthProvider>
+                  <AfterLoginSync />
+                  <DiagnosticsScreen />
 
-                <DomainFallbackBanner />
-                <ScrollOnUserScrollDown />
-                <div className="flex flex-col min-h-screen overflow-x-hidden">
-                  <Navbar />
+                  <DomainFallbackBanner />
+                  <ScrollOnUserScrollDown />
+                  <div className="flex flex-col min-h-screen overflow-x-hidden">
+                    <Navbar />
 
-                  <main className="flex-grow overflow-auto">
-                    <Routes>
-                      <Route path="/" element={<Index />} />
-                      <Route path="/pricing" element={<Pricing />} />
+                    <main className="flex-grow overflow-auto">
+                      <Routes>
+                        <Route path="/" element={<Index />} />
+                        <Route path="/pricing" element={<Pricing />} />
 
-                      <Route
-                        path="/upload"
-                        element={
-                          <ProtectedRoute>
-                            <Upload />
-                          </ProtectedRoute>
-                        }
-                      />
-                      <Route
-                        path="/usage"
-                        element={
-                          <ProtectedRoute>
-                            <Usage />
-                          </ProtectedRoute>
-                        }
-                      />
+                        <Route
+                          path="/upload"
+                          element={
+                            <ProtectedRoute>
+                              <Upload />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path="/usage"
+                          element={
+                            <ProtectedRoute>
+                              <Usage />
+                            </ProtectedRoute>
+                          }
+                        />
 
-                      {/* Admin (guarded by email allow-list in ProtectedAdminRoute) */}
-                      <Route element={<ProtectedAdminRoute />}>
-                        <Route path="/admin" element={<Admin />} />
-                      </Route>
+                        {/* Admin (guarded by email allow-list in ProtectedAdminRoute) */}
+                        <Route element={<ProtectedAdminRoute />}>
+                          <Route path="/admin" element={<Admin />} />
+                        </Route>
 
-                    <Route path="/terms" element={<Terms />} />
-                    <Route path="/privacy" element={<Privacy />} />
-                    <Route path="/disclaimer" element={<Disclaimer />} />
-					<Route path="/demos2" element={<Demos2 />} />
-					<Route path="/gettingstarted" element={<GettingStarted />} />
-					<Route path="/accountmanagement" element={<AccountManagement />} />  
-					<Route path="/troubleshooting" element={<Troubleshooting />} />                     
-					<Route path="/uploadingphotos" element={<UploadingPhotos />} />  	  
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/features" element={<Features />} />
-                    <Route path="/pricing" element={<Pricing />} />
-                    <Route path="/demos" element={<Demos />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/faq" element={<FAQ />} />
-                    <Route path="/success" element={<Success />} />
-                    <Route path="/examples" element={<Examples />} />
-                    <Route path="/help" element={<Help />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<SignUp />} />
-                    <Route path="/vip-signup" element={<VipSignup />} />
-                    <Route path="/chrome-extension" element={<ChromeExtension />} />
-                    <Route path="/chrome-store-policy" element={<ChromeStorePolicy />} />
-					<Route path="/blog" element={<Blog />} />
-					<Route path="/blog/:slug" element={<BlogPost />} />
-                    <Route path="*" element={<NotFound />} />
-                    </Routes>
-                  </main>
-                  <ScrollToTopButton />
-                </div>
-              </AuthProvider>
-            </BrowserRouter>
-          </TooltipProvider>
-        </SocialShareProvider>
+                        <Route path="/terms" element={<Terms />} />
+                        <Route path="/privacy" element={<Privacy />} />
+                        <Route path="/disclaimer" element={<Disclaimer />} />
+                        <Route path="/demos2" element={<Demos2 />} />
+                        <Route path="/gettingstarted" element={<GettingStarted />} />
+                        <Route path="/accountmanagement" element={<AccountManagement />} />
+                        <Route path="/troubleshooting" element={<Troubleshooting />} />
+                        <Route path="/uploadingphotos" element={<UploadingPhotos />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/features" element={<Features />} />
+                        <Route path="/demos" element={<Demos />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/faq" element={<FAQ />} />
+                        <Route path="/success" element={<Success />} />
+                        <Route path="/examples" element={<Examples />} />
+                        <Route path="/help" element={<Help />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/signup" element={<SignUp />} />
+                        <Route path="/vip-signup" element={<VipSignup />} />
+                        <Route path="/chrome-extension" element={<ChromeExtension />} />
+                        <Route path="/chrome-store-policy" element={<ChromeStorePolicy />} />
+                        <Route path="*" element={<NotFound />} />
+                      </Routes>
+                    </main>
+                    <ScrollToTopButton />
+                  </div>
+                </AuthProvider>
+              </BrowserRouter>
+            </TooltipProvider>
+          </SocialShareProvider>
         </ThemeProvider>
       </HelmetProvider>
     </QueryClientProvider>
