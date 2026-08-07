@@ -13,8 +13,6 @@ import Navbar from "@/components/Navbar";
 import ScrollOnUserScrollDown from "@/components/ScrollOnUserScrollDown";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import AfterLoginSync from "@/components/auth/AfterLoginSync";
-import DiagnosticsScreen from "@/components/DiagnosticsScreen";
-import { DomainFallbackBanner } from "@/components/DomainFallbackBanner";
 
 // Pages
 import Index from "./pages/Index";
@@ -60,9 +58,6 @@ function App() {
               <BrowserRouter>
                 <AuthProvider>
                   <AfterLoginSync />
-                  <DiagnosticsScreen />
-
-                  <DomainFallbackBanner />
                   <ScrollOnUserScrollDown />
                   <div className="flex flex-col min-h-screen overflow-x-hidden">
                     <Navbar />
