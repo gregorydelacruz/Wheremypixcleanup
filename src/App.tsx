@@ -58,10 +58,10 @@ function App() {
                 <AuthProvider>
                   <AfterLoginSync />
                   <ScrollToTop />
-                  <div className="flex flex-col min-h-screen overflow-x-hidden">
+                  <div className="flex flex-col overflow-x-hidden md:min-h-screen">
                     <Navbar />
 
-                    <main className="flex-grow overflow-auto">
+                    <main className="overflow-auto md:flex-grow">
                       <Routes>
                         <Route path="/" element={<Index />} />
                         <Route path="/pricing" element={<Pricing />} />
