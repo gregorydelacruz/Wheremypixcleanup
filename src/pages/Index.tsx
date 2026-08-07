@@ -21,10 +21,10 @@ const Index = () => {
         <section className="px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-[1.65rem] leading-tight sm:text-3xl md:text-5xl font-extrabold text-white">
-              Turn Photo Chaos into a Searchable Library in Minutes
+              Turn Photo Chaos into a Library in Minutes
             </h1>
             <p className="mt-2 md:mt-4 text-sm sm:text-base md:text-xl text-white/80 max-w-xl mx-auto">
-              AI renames, sorts, and folders your photos automatically—so you can find the moments that matter.
+              AI renames, sorts, and folders your photos—so you can find the moments that matter.
             </p>
 
             <div className="mt-4 md:mt-8 flex justify-center">
@@ -34,26 +34,6 @@ const Index = () => {
               >
                 Organize My Photos
               </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* SOCIAL PROOF — single compact row */}
-        <section className="mt-4 md:mt-8 px-4">
-          <div className="mx-auto max-w-lg flex items-center justify-between gap-2 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-3 py-2.5 md:px-6 md:py-4 text-center">
-            <div className="flex-1">
-              <div className="text-base md:text-2xl font-extrabold text-white">2,000+</div>
-              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Users</div>
-            </div>
-            <div className="w-px h-8 bg-white/20" />
-            <div className="flex-1">
-              <div className="text-base md:text-2xl font-extrabold text-white">1M+</div>
-              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Images</div>
-            </div>
-            <div className="w-px h-8 bg-white/20" />
-            <div className="flex-1">
-              <div className="text-base md:text-2xl font-extrabold text-white">4.9★</div>
-              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Rating</div>
             </div>
           </div>
         </section>
@@ -105,14 +85,24 @@ const Index = () => {
           </div>
         </section>
 
-        {/* FEATURES LINK */}
-        <section className="mt-4 md:mt-8 text-center px-4">
-          <Link
-            to="/features"
-            className="text-sm md:text-lg font-semibold text-white/90 hover:text-white underline underline-offset-4 transition-colors"
-          >
-            Core Features &amp; Benefits
-          </Link>
+        {/* SOCIAL PROOF — below steps */}
+        <section className="mt-4 md:mt-8 px-4">
+          <div className="mx-auto max-w-lg flex items-center justify-between gap-2 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-3 py-2.5 md:px-6 md:py-4 text-center">
+            <div className="flex-1">
+              <div className="text-base md:text-2xl font-extrabold text-white">2,000+</div>
+              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Users</div>
+            </div>
+            <div className="w-px h-8 bg-white/20" />
+            <div className="flex-1">
+              <div className="text-base md:text-2xl font-extrabold text-white">1M+</div>
+              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Images</div>
+            </div>
+            <div className="w-px h-8 bg-white/20" />
+            <div className="flex-1">
+              <div className="text-base md:text-2xl font-extrabold text-white">4.9★</div>
+              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Rating</div>
+            </div>
+          </div>
         </section>
       </main>
 
