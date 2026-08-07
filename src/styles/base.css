@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
@@ -14,16 +13,31 @@
 @layer base {
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background-image: linear-gradient(to bottom right, #007BFF, #0056b3); /* Updated to blue gradients */
+    background-image: linear-gradient(to bottom right, #007BFF, #0056b3);
     background-attachment: fixed;
   }
 
   .dark body {
-    background-image: linear-gradient(to bottom, #004080, #002060); /* Dark theme in blues */
+    background-image: linear-gradient(to bottom, #004080, #002060);
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-sans font-bold tracking-tight;
+  }
+}
+
+/*
+  Mobile: page shells use min-h-screen + flex-1, which leaves a tall empty
+  stretch under the footer (100vh vs mobile browser chrome). Only enforce
+  full-height layouts from md and up.
+*/
+@media (max-width: 767px) {
+  .min-h-screen {
+    min-height: auto !important;
+  }
+
+  .flex-1 {
+    flex: 0 1 auto !important;
   }
 }
