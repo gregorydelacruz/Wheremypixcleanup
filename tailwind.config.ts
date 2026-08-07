@@ -114,7 +114,17 @@ export default {
 					'0%': { 'border-radius': '60% 40% 30% 70% / 60% 30% 70% 40%' },
 					'50%': { 'border-radius': '30% 60% 70% 40% / 50% 60% 30% 60%' },
 					'100%': { 'border-radius': '60% 40% 30% 70% / 60% 30% 70% 40%' }
-				}
+				},
+				'cta-pulse': {
+					'0%, 100%': {
+						transform: 'scale(1)',
+						boxShadow: '0 0 0 0 rgba(129, 140, 248, 0.7), 0 10px 25px rgba(0, 0, 0, 0.25)',
+					},
+					'50%': {
+						transform: 'scale(1.06)',
+						boxShadow: '0 0 0 14px rgba(129, 140, 248, 0), 0 14px 30px rgba(79, 70, 229, 0.55)',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -126,7 +136,8 @@ export default {
 				'scale': 'scale 0.3s ease-out',
 				'ripple': 'ripple 3s ease-in-out infinite',
 				'pulse-ring': 'pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite',
-				'morph': 'morph 8s ease-in-out infinite'
+				'morph': 'morph 8s ease-in-out infinite',
+				'cta-pulse': 'cta-pulse 1.8s ease-in-out infinite',
 			},
 			backdropFilter: {
 				'none': 'none',

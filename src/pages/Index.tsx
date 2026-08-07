@@ -28,10 +28,10 @@ const Index = () => {
               My custom AI renames, organizes by category folders and downloads them all
             </p>
 
-            <div className="mt-4 md:mt-8 flex justify-center">
+            <div className="mt-5 md:mt-8 flex justify-center">
               <Link
                 to={user ? "/upload" : "/login"}
-                className="inline-flex items-center justify-center px-7 py-2.5 md:px-10 md:py-4 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-base md:text-xl shadow-2xl transition duration-300 hover:scale-105"
+                className="animate-cta-pulse inline-flex items-center justify-center px-8 py-3 md:px-10 md:py-4 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold text-lg md:text-xl shadow-2xl ring-2 ring-white/40 transition-colors duration-300 hover:scale-105 hover:animate-none"
               >
                 Organize My Photos
               </Link>
