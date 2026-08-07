@@ -1,98 +1,104 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "@/auth/useAuth";
-import SocialProofSection from "@/components/SocialProofSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   const { user } = useAuth();
-  
+
   return (
     <div className="relative min-h-screen flex flex-col">
       {/* Background */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-[#007BFF] to-[#0056b3]" />
-        <div className="absolute inset-0 opacity-50">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-blue-400/30 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
-          <div className="absolute top-40 right-20 w-72 h-72 bg-blue-300/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
-          <div className="absolute -bottom-8 left-40 w-72 h-72 bg-blue-500/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-16 left-10 w-56 h-56 bg-blue-400/30 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
+          <div className="absolute top-28 right-10 w-56 h-56 bg-blue-300/30 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
         </div>
       </div>
 
-      <main className="flex-1 pt-8 pb-12 relative z-10">
-  {/* HERO */}
-  <section className="py-4">
-    <div className="mx-auto max-w-5xl px-4 text-center">
-      <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white">
-        Turn Decades of Photo Chaos into a Clean Searchable Library in Minutes
-      </h1>
-      <p className="mt-4 text-lg md:text-xl text-white/80">
-        Where My Pix uses my custom AI to rename, sort, and declutter your photos
-        automatically—so you can actually find the moments that matter.
-      </p>
-
-     {/* CTA BUTTON */}
-<div className="mt-8 flex justify-center">
-  <Link
-    to={user ? "/upload" : "/login"}
-    className="inline-flex items-center justify-center px-10 py-4 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xl shadow-2xl transition duration-300 transform hover:scale-105"
-  >
-    Organize My Photos
-  </Link>
-</div>
-    </div>
-  </section>
-
-  {/* SOCIAL PROOF */}
-  <section className="py-6">
-    <SocialProofSection />
-  </section>
-        {/* HOW IT WORKS */}
-        <section className="pt-2 pb-8">
-          <div className="mx-auto max-w-4xl px-4">
-            <h2 className="text-4xl font-bold text-center text-white mb-4">
-              From Chaos to Organized in 3 Simple Steps
-            </h2>
-            <p className="text-center text-white/80 text-lg mb-12">
-              No technical setup. No manual sorting. Just results.
+      <main className="flex-1 relative z-10 pt-3 pb-6 md:pt-6 md:pb-10">
+        {/* HERO */}
+        <section className="px-4">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="text-[1.65rem] leading-tight sm:text-3xl md:text-5xl font-extrabold text-white">
+              Turn Photo Chaos into a Searchable Library in Minutes
+            </h1>
+            <p className="mt-2 md:mt-4 text-sm sm:text-base md:text-xl text-white/80 max-w-xl mx-auto">
+              AI renames, sorts, and folders your photos automatically—so you can find the moments that matter.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Step 1 */}
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-                <div className="mx-auto h-16 w-16 rounded-full bg-gradient-to-r from-indigo-400 to-sky-500 flex items-center justify-center text-2xl font-bold text-white shadow-lg mb-4">
+            <div className="mt-4 md:mt-8 flex justify-center">
+              <Link
+                to={user ? "/upload" : "/login"}
+                className="inline-flex items-center justify-center px-7 py-2.5 md:px-10 md:py-4 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-base md:text-xl shadow-2xl transition duration-300 hover:scale-105"
+              >
+                Organize My Photos
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* SOCIAL PROOF — single compact row */}
+        <section className="mt-4 md:mt-8 px-4">
+          <div className="mx-auto max-w-lg flex items-center justify-between gap-2 rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-3 py-2.5 md:px-6 md:py-4 text-center">
+            <div className="flex-1">
+              <div className="text-base md:text-2xl font-extrabold text-white">2,000+</div>
+              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Users</div>
+            </div>
+            <div className="w-px h-8 bg-white/20" />
+            <div className="flex-1">
+              <div className="text-base md:text-2xl font-extrabold text-white">1M+</div>
+              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Images</div>
+            </div>
+            <div className="w-px h-8 bg-white/20" />
+            <div className="flex-1">
+              <div className="text-base md:text-2xl font-extrabold text-white">4.9★</div>
+              <div className="text-[10px] md:text-xs text-white/70 leading-tight">Rating</div>
+            </div>
+          </div>
+        </section>
+
+        {/* HOW IT WORKS — tight 3-step strip */}
+        <section className="mt-5 md:mt-10 px-4">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-lg md:text-3xl font-bold text-center text-white mb-3 md:mb-6">
+              3 Simple Steps
+            </h2>
+
+            <div className="grid grid-cols-3 gap-2 md:gap-6">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-2.5 md:p-6 border border-white/20 text-center">
+                <div className="mx-auto h-8 w-8 md:h-14 md:w-14 rounded-full bg-gradient-to-r from-indigo-400 to-sky-500 flex items-center justify-center text-sm md:text-xl font-bold text-white shadow mb-1.5 md:mb-3">
                   1
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  Login & Upload
+                <h3 className="text-xs md:text-lg font-semibold text-white leading-tight">
+                  Login &amp; Upload
                 </h3>
-                <p className="text-white/80">
-                  Sign in and upload your photos. No technical setup needed. No edits to your original images. Your photos stay private and secure.
+                <p className="hidden md:block mt-2 text-sm text-white/80">
+                  Sign in and upload. Originals stay private and untouched.
                 </p>
               </div>
 
-              {/* Step 2 */}
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-                <div className="mx-auto h-16 w-16 rounded-full bg-gradient-to-r from-indigo-400 to-sky-500 flex items-center justify-center text-2xl font-bold text-white shadow-lg mb-4">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-2.5 md:p-6 border border-white/20 text-center">
+                <div className="mx-auto h-8 w-8 md:h-14 md:w-14 rounded-full bg-gradient-to-r from-indigo-400 to-sky-500 flex items-center justify-center text-sm md:text-xl font-bold text-white shadow mb-1.5 md:mb-3">
                   2
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  Click "Organize Photos"
+                <h3 className="text-xs md:text-lg font-semibold text-white leading-tight">
+                  Organize
                 </h3>
-                <p className="text-white/80">
-                  Our AI renames, categorizes, and groups your images into clear folders in just a few minutes.
+                <p className="hidden md:block mt-2 text-sm text-white/80">
+                  AI renames, categorizes, and groups into clear folders.
                 </p>
               </div>
 
-              {/* Step 3 */}
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 text-center">
-                <div className="mx-auto h-16 w-16 rounded-full bg-gradient-to-r from-indigo-400 to-sky-500 flex items-center justify-center text-2xl font-bold text-white shadow-lg mb-4">
+              <div className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-2.5 md:p-6 border border-white/20 text-center">
+                <div className="mx-auto h-8 w-8 md:h-14 md:w-14 rounded-full bg-gradient-to-r from-indigo-400 to-sky-500 flex items-center justify-center text-sm md:text-xl font-bold text-white shadow mb-1.5 md:mb-3">
                   3
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  Download Your Library
+                <h3 className="text-xs md:text-lg font-semibold text-white leading-tight">
+                  Download ZIP
                 </h3>
-                <p className="text-white/80">
-                  Get a single ZIP file with all your neatly labeled folders—ready to store, back up, or share.
+                <p className="hidden md:block mt-2 text-sm text-white/80">
+                  One ZIP with labeled folders—ready to store or share.
                 </p>
               </div>
             </div>
@@ -100,12 +106,12 @@ const Index = () => {
         </section>
 
         {/* FEATURES LINK */}
-        <section className="pt-2 pb-10 text-center">
+        <section className="mt-4 md:mt-8 text-center px-4">
           <Link
             to="/features"
-            className="text-xl font-semibold text-white hover:text-white/80 underline underline-offset-4 transition-colors"
+            className="text-sm md:text-lg font-semibold text-white/90 hover:text-white underline underline-offset-4 transition-colors"
           >
-            Core Features & Benefits
+            Core Features &amp; Benefits
           </Link>
         </section>
       </main>
