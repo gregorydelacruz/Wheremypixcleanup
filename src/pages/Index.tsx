@@ -16,7 +16,8 @@ const Index = () => {
         </div>
       </div>
 
-      <main className="flex-1 relative z-10 pt-3 pb-6 md:pt-6 md:pb-10">
+      {/* flex-1 only on md+ so mobile doesn't stretch a huge empty gap above the footer */}
+      <main className="relative z-10 pt-6 pb-3 md:flex-1 md:pt-8 md:pb-10">
         {/* HERO */}
         <section className="px-4">
           <div className="mx-auto max-w-3xl text-center">
