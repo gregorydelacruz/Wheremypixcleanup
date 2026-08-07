@@ -1,4 +1,3 @@
-
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,7 +22,6 @@ const MobileMenu = () => {
     setIsOpen(false);
   }, [location.pathname]);
 
-  // Function to handle clicking on nav links
   const handleLinkClick = () => {
     setIsOpen(false);
   };
@@ -39,32 +37,24 @@ const MobileMenu = () => {
       <DrawerContent>
         <ScrollArea className="h-[80vh] overflow-y-auto">
           <div className="px-4 py-6 space-y-6">
-            <nav className="flex flex-col space-y-4">
-              {/* Main Navigation */}
-              <MobileMainLinks handleLinkClick={handleLinkClick} />
-              
-              {/* Resources Section */}
-              <MobileResourcesLinks handleLinkClick={handleLinkClick} />
-
-              {/* Company Section */}
-              <MobileCompanyLinks handleLinkClick={handleLinkClick} />
-              
-              {/* Action Items */}
-              <MobileActionLinks 
-                handleLinkClick={handleLinkClick} 
-                isAuthenticated={isAuthenticated}
-              />
-            </nav>
-            
-            {/* Authentication Buttons */}
+            {/* Auth first — above Home */}
             <MobileAuthButtons
               isAuthenticated={isAuthenticated}
               login={login}
               logOut={logOut}
             />
-            
-            {/* Theme Toggle */}
-            <div className="flex justify-center pt-4">
+
+            <nav className="flex flex-col space-y-4">
+              <MobileMainLinks handleLinkClick={handleLinkClick} />
+              <MobileResourcesLinks handleLinkClick={handleLinkClick} />
+              <MobileCompanyLinks handleLinkClick={handleLinkClick} />
+              <MobileActionLinks
+                handleLinkClick={handleLinkClick}
+                isAuthenticated={isAuthenticated}
+              />
+            </nav>
+
+            <div className="flex justify-center pt-2">
               <ThemeToggle />
             </div>
           </div>

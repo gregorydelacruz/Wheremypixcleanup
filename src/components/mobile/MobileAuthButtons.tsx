@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 interface MobileAuthButtonsProps {
@@ -9,7 +8,7 @@ interface MobileAuthButtonsProps {
 
 export const MobileAuthButtons = ({ isAuthenticated, login, logOut }: MobileAuthButtonsProps) => {
   return (
-    <div className="flex flex-col space-y-3 pt-4 border-t">
+    <div className="flex flex-col space-y-3 pb-2 border-b">
       {isAuthenticated ? (
         <Button variant="default" onClick={logOut} className="w-full">
           Log out
