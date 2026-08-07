@@ -59,7 +59,7 @@ export default {
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
+					foreground: 'hsl(var(--sidebar-primary))',
 					primary: 'hsl(var(--sidebar-primary))',
 					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
 					accent: 'hsl(var(--sidebar-accent))',
@@ -137,7 +137,7 @@ export default {
 				'ripple': 'ripple 3s ease-in-out infinite',
 				'pulse-ring': 'pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite',
 				'morph': 'morph 8s ease-in-out infinite',
-				'cta-pulse': 'cta-pulse 1.8s ease-in-out infinite',
+				'cta-pulse': 'cta-pulse 9s ease-in-out infinite',
 			},
 			backdropFilter: {
 				'none': 'none',
