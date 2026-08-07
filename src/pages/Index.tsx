@@ -22,10 +22,10 @@ const Index = () => {
         <section className="px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-[1.65rem] leading-tight sm:text-3xl md:text-5xl font-extrabold text-white">
-              Turn Messy Photos into an Organized, Downloadable Library
+              Organize Your Photos Instantly
             </h1>
             <p className="mt-2 md:mt-4 text-sm sm:text-base md:text-xl text-white/80 max-w-xl mx-auto">
-              AI renames, sorts, and folders your photos—so you can find the moments that matter.
+              My custom AI renames, organizes by category folders and downloads them all
             </p>
 
             <div className="mt-4 md:mt-8 flex justify-center">
