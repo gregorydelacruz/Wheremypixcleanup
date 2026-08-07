@@ -7,7 +7,7 @@ const Index = () => {
   const { user } = useAuth();
 
   return (
-    <div className="relative min-h-screen flex flex-col">
+    <div className="relative flex flex-col md:min-h-screen">
       {/* Background */}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-[#007BFF] to-[#0056b3]" />
