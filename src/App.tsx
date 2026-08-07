@@ -26,7 +26,6 @@ import Contact from "./pages/Contact";
 import GettingStarted from "./pages/GettingStarted";
 import Troubleshooting from "./pages/Troubleshooting";
 import UploadingPhotos from "./pages/UploadingPhotos";
-import AccountManagement from "./pages/AccountManagement";
 import Features from "./pages/Features";
 import Examples from "./pages/Examples";
 import About from "./pages/About";
@@ -94,7 +93,6 @@ function App() {
                         <Route path="/disclaimer" element={<Disclaimer />} />
                         <Route path="/demos2" element={<Demos2 />} />
                         <Route path="/gettingstarted" element={<GettingStarted />} />
-                        <Route path="/accountmanagement" element={<AccountManagement />} />
                         <Route path="/troubleshooting" element={<Troubleshooting />} />
                         <Route path="/uploadingphotos" element={<UploadingPhotos />} />
                         <Route path="/contact" element={<Contact />} />
