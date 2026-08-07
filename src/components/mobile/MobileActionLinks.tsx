@@ -1,5 +1,4 @@
-
-import { Upload, Chrome, BarChart } from "lucide-react";
+import { Upload, BarChart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface MobileActionLinksProps {
@@ -18,14 +17,6 @@ export const MobileActionLinks = ({ handleLinkClick, isAuthenticated }: MobileAc
       >
         <Upload className="h-4 w-4 mr-1" />
         Upload
-      </Link>
-      <Link
-        to="/chrome-extension"
-        className="text-base font-medium text-foreground hover:text-foreground/80 flex items-center gap-1 pl-2"
-        onClick={handleLinkClick}
-      >
-        <Chrome className="h-4 w-4 mr-1" />
-        Chrome Extension
       </Link>
       {isAuthenticated && (
         <Link
