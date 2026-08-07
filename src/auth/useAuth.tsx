@@ -1,8 +1,6 @@
 // src/auth/useAuth.tsx
 import { useAuth0 } from '@auth0/auth0-react';
 import { useMemo } from 'react';
-import { reportAuth0Error } from '@/lib/diagnostics';
-
 
 export interface AppUser {
   sub: string;
@@ -12,11 +10,6 @@ export interface AppUser {
   avatar_url: string | null;
 }
 
-
-export default function AccountSwitcher() {
-  const { loginSelectAccount } = useAuth();
-  return <button onClick={loginSelectAccount}>Switch Google Account</button>;
-}
 export function useAuth() {
   const {
     isAuthenticated,
@@ -60,18 +53,15 @@ export function useAuth() {
       try {
         await getAccessTokenSilently({ cacheMode: 'off' } as any);
       } catch (e) {
-        reportAuth0Error(e, 'token');
+        console.error('Auth0 token refresh error:', e);
       }
 
       let raw = (await getIdTokenClaims())?.__raw as string | undefined;
 
       if (!isFresh(raw)) {
         // Silent refresh couldn't produce a valid ID token — re-authenticate.
-        reportAuth0Error(
-          new Error(
-            'ID token expired and silent refresh failed. Re-authentication required (check Auth0 ID Token Expiration + refresh token lifetimes and Allowed Web Origins).',
-          ),
-          'token',
+        console.error(
+          'ID token expired and silent refresh failed. Re-authentication required.'
         );
         await loginWithRedirect({
           appState: { returnTo: window.location.pathname + window.location.search },
@@ -82,32 +72,32 @@ export function useAuth() {
 
       return raw ?? null;
     } catch (e) {
-      reportAuth0Error(e, 'token');
+      console.error('Auth0 getIdToken error:', e);
       return null;
     }
   }
-
-
-
 
   async function getAccessToken(audience?: string, scope?: string) {
     return getAccessTokenSilently({
       ...(audience ? { authorizationParams: { audience, scope } } : {}),
     });
   }
- const loginSelectAccount = () =>
+
+  const loginSelectAccount = () =>
     loginWithRedirect({
       authorizationParams: {
-        prompt: 'select_account',           // 👈 this is the line you asked about
+        prompt: 'select_account',
         scope: 'openid email profile offline_access',
       },
     });
-  const signUp = () => loginWithRedirect({
-    authorizationParams: {
-      screen_hint: 'signup',
-      scope: 'openid email profile offline_access',
-    },
-  });
+
+  const signUp = () =>
+    loginWithRedirect({
+      authorizationParams: {
+        screen_hint: 'signup',
+        scope: 'openid email profile offline_access',
+      },
+    });
 
   const logOut = () =>
     logout({
